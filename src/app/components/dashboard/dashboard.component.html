@@ -1,0 +1,40 @@
+<section id="content">
+  <div *ngFor="let movie of movies"  class="movieDetail col-s2">
+    <div class="card">
+     <div class="card-image waves-effect waves-block waves-light" [routerLink]="['/movie', movie.id]">
+       <img class="img-movie avatar" *safeSrc="urlImg + movie.poster_path">
+     </div>
+     <ul class="card-action-buttons">
+        <li><a class="btn-floating waves-effect waves-light teal accent-3 activator"><i class="material-icons">format_align_left</i></a>
+        </li>
+        <li><a class="btn-floating waves-effect waves-light pink accent-2"><i class="material-icons">favorite</i></a>
+        </li>
+    </ul>
+     <div class="card-content">
+       <h4 class="title">{{movie.title}}</h4>
+       <p><rating [(ngModel)]="movie.vote_average"
+                                                           [max]="5"
+                                                           iconClass="fa-star"
+                                                           fullIcon="★"
+                                                           emptyIcon="☆"
+                                                           [readonly]="true"
+                                                           [disabled]="true"
+                                                           [required]="true"
+                                                           [float]="true"
+                                                           [titles]="['Bad', 'Not Good', 'Good', 'Excellent', 'Perfect']">
+                                                   </rating><small>({{movie.vote_count}})</small></p>
+     </div>
+     <div class="card-reveal">
+       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+       <p>{{movie.overview}}</p>
+     </div>
+  </div>
+</div>
+</section>
+<br/>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

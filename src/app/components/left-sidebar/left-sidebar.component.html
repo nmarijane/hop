@@ -1,0 +1,18 @@
+<!-- Sidebar -->
+<aside id="left-sidebar-nav">
+  <ul id="slide-out" class="side-nav fixed leftside-navigation">
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+          <li class="bold"><a class="collapsible-header waves-effect active"><i class="mdi-action-view-carousel"></i> Genres</a>
+              <div class="collapsible-body">
+                  <ul>
+                    <li *ngFor="let genre of genres | async">
+                        <a [routerLink]="['/movies/genres/', genre.id]" class="waves-effect">{{genre.name}}</a>
+                    </li>
+                  </ul>
+              </div>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>

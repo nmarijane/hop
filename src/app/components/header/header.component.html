@@ -1,0 +1,31 @@
+<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color blue-grey darken-3">
+                <div class="nav-wrapper">
+                    <ul class="left">
+                      <li><h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"> <span class="logo-text">Kiwi</span></a></h1></li>
+                      <li><a routerLink="/" routerLinkActive="active" class="waves-effect waves-block waves-light">{{ 'NAV.HOME' | translate }}</a></li>
+                      <li><a routerLink="/movies" routerLinkActive="active" class="waves-effect waves-block waves-light">{{ 'NAV.MOVIE' | translate }}</a></li>
+                      <li><a routerLink="/tv" routerLinkActive="active" class="waves-effect waves-block waves-light">{{ 'NAV.TV' | translate }}</a></li>
+                    </ul>
+                    <movie-search></movie-search>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#" class="waves-effect waves-block waves-light translation-button" data-activates="translation-dropdown"><img src="img/flags/France.png" class="flags" alt="FR"></a></li>
+                    <ul id="translation-dropdown" class="dropdown-content">
+                      <li>
+                        <a href="#!" (click)="translate.use('en')"><img class="flags" src="img/flags/United-Kingdom.png" alt="English">  <span class="language-select">English</span></a>
+                      </li>
+                      <li>
+                        <a href="#!" (click)="translate.use('fr')"><img class="flags" src="img/flags/France.png" alt="French">  <span class="language-select">French</span></a>
+                      </li>
+                      <li>
+                        <a href="#!" (click)="translate.use('de')"><img class="flags" src="img/flags/Germany.png" alt="German">  <span class="language-select">German</span></a>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+  </header>
